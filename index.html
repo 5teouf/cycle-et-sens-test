@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stéphanie Husson — Accompagnement du Féminin & Santé Holistique</title>
+    <meta name="description" content="Accompagnement de la femme de la fertilité à la ménopause : soins corporels, symptothermie, nutrition & micronutrition, et sophrologie PMA à Bordeaux.">
+    
+    <!-- Typographie raffinée Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2d5a43;
+            --primary-light: #e8f0eb;
+            --primary-dark: #1b3a2b;
+            --accent: #87a990;
+            --bg-color: #fcfdfd;
+            --bg-alt: #f4f7f4;
+            --text-color: #2b3530;
+            --text-muted: #586960;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(45, 90, 67, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* --- En-tête / Navigation --- */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(252, 253, 253, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--primary-light);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- Boutons CTA --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.85rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(45, 90, 67, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(45, 90, 67, 0.25);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1.5px solid var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* --- Sections communes --- */
+        section {
+            padding: 5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3.5rem auto;
+            font-size: 1.05rem;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--primary-light) 100%);
+            padding: 6rem 1.5rem 5rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--primary-light);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* --- À Propos --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .leaf-card {
+            background-color: var(--primary-light);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            padding: 3.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid var(--accent);
+        }
+
+        .leaf-card span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* --- Services --- */
+        .services {
+            background-color: var(--bg-alt);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(45, 90, 67, 0.05);
+            display: flex;
+            flex-direction: flex-start;
+            flex-direction: column;
+        }
+
+        .service-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Pourquoi cette approche --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .benefit-bullet {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .benefit-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .benefit-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Contact --- */
+        .contact {
+            background-color: var(--bg-alt);
+        }
+
+        .contact-box {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2.5rem 0;
+            text-align: left;
+        }
+
+        .contact-item h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-item p {
+            font-weight: 500;
+        }
+
+        /* --- Pied de page --- */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* --- Responsive Mobile --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplification pour la version sans JS */
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            section {
+                padding: 3.5rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand">Stéphanie Husson</a>
+            <ul class="nav-links">
+                <li><a href="#propos">À propos</a></li>
+                <li><a href="#services">Accompagnements</a></li>
+                <li><a href="#approche">Mon approche</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Remplacer le lien href par votre lien de prise de rendez-vous (Doctolib, Calendly...) -->
+            <a href="https://votre-lien-de-reservation.com" class="btn">Prendre rendez-vous</a>
+        </div>
+    </header>
+
+    <!-- Section Accueil / Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🌿 Santé holistique du féminin</span>
+            <h1>Reconconnectez-vous à votre corps, de la fertilité à la ménopause</h1>
+            <p>Un accompagnement sur-mesure combinant soins corporels, compréhension du cycle, nutrition adaptative et sophrologie pour traverser chaque étape de votre vie avec sérénité.</p>
+            <div class="hero-buttons">
+                <a href="https://votre-lien-de-reservation.com" class="btn">Prendre rendez-vous</a>
+                <a href="#services" class="btn btn-outline">Découvrir mes soins</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="propos">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Une écoute bienveillante au service de votre équilibre</h2>
+                    <p>Chaque femme traverse des cycles et des phases de vie uniques. Qu'il s'agisse de douleurs menstruelles, d'un désir d'enfant, d'un parcours en PMA ou du désir de simplement mieux comprendre votre fonctionnement hormonal, je vous propose un espace d'écoute et de soins adaptés.</p>
+                    <p>Mon approche réunit le corps et l'esprit à travers des techniques douces, scientifiques et concrètes pour vous redonner pleine autonomie sur votre santé et votre bien-être au quotidien.</p>
+                </div>
+                <div class="leaf-card">
+                    <span>"Honorons le rythme naturel de chaque femme."</span>
+                    <p>Soins spécialisés • Écoute • Autonomie</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services / Offres -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Mes Accompagnements</h2>
+            <p class="section-subtitle">Des prestations ciblées et complémentaires pour répondre précisément aux besoins de votre corps.</p>
+            
+            <div class="services-grid">
+                <!-- Carte 1 -->
+                <div class="service-card">
+                    <div class="service-icon">🌸</div>
+                    <h3>Soins Corporels & Massages Spécialisés</h3>
+                    <p>Drainage lymphatique et massages ciblés pour apaiser les troubles menstruels (endométriose, règles douloureuses) et favoriser la circulation et la fertilité.</p>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h3>Symptothermie & Connaissance du Cycle</h3>
+                    <p>Apprenez à décoder les signaux de votre corps. Un suivi personnalisé pour la contraception naturelle, la conception ou l'observation globale de votre santé.</p>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="service-card">
+                    <div class="service-icon">🥑</div>
+                    <h3>Nutrition & Micronutrition</h3>
+                    <p>Optimisez votre alimentation en fonction de vos problématiques hormonales, de votre fertilité ou de la gestion de l'inflammation.</p>
+                </div>
+
+                <!-- Carte 4 -->
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Sophrologie & Parcours PMA / Projets Bébé</h3>
+                    <p>Un soutien psychocorporel dédié aux femmes et couples en projet bébé ou parcours de PMA pour mieux gérer l'attente, le stress et se réapproprier son corps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Pourquoi cette approche -->
+    <section id="approche">
+        <div class="container">
+            <h2 class="section-title">Pourquoi cet accompagnement ?</h2>
+            <p class="section-subtitle">Une prise en charge globale conçue pour vous redonner sérénité et vitalité.</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-bullet">✓</div>
+                    <div class="benefit-text">
+                        <h4>Une approche personnalisée</h4>
+                        <p>Pas de protocole standardisé : chaque consultation est adaptée à votre histoire, votre cycle et vos objectifs.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-bullet">✓</div>
+                    <div class="benefit-text">
+                        <h4>Soutien dédié au projet bébé & PMA</h4>
+                        <p>Des outils ciblés pour apaiser le système nerveux et optimiser le bien-être physique lors des protocoles.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-bullet">✓</div>
+                    <div class="benefit-text">
+                        <h4>Soulagement des douleurs</h4>
+                        <p>Des soins manuels et des ajustements nutritionnels visant la réduction de l'inflammation et des gênes menstruelles.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-bullet">✓</div>
+                    <div class="benefit-text">
+                        <h4>Autonomie durable</h4>
+                        <p>Comprendre votre corps vous permet de prendre des décisions éclairées pour votre santé tout au long de votre vie.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact & Prise de rendez-vous -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Prendre rendez-vous</h2>
+                <p>Prête à réserver votre séance ou à me poser une question ? N'hésitez pas à me contacter ou à réserver directement votre créneau en ligne.</p>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>📍 Lieu d'exercice</h4>
+                        <!-- Mettez à jour votre adresse ou ville -->
+                        <p>Bordeaux & Alentours</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>✉️ Email</h4>
+                        <!-- Texte provisoire à personnaliser -->
+                        <p><a href="mailto:contact@stephaniehusson.fr" style="color: var(--text-color); text-decoration: none;">contact@stephaniehusson.fr</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📞 Téléphone</h4>
+                        <!-- Texte provisoire à personnaliser -->
+                        <p>06 00 00 00 00</p>
+                    </div>
+                </div>
+
+                <!-- CTA Principal final -->
+                <a href="https://votre-lien-de-reservation.com" class="btn">Réserver ma séance en ligne</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Stéphanie Husson. Tous droits réservés. | Accompagnement du féminin & Bien-être</p>
+        </div>
+    </footer>
+
+</body>
+</html>
